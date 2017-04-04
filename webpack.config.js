@@ -8,8 +8,8 @@ function resolve(dir) {
 console.log(__dirname)
 module.exports = {
     entry: {
-        "vue-demo": './src/vue/page/vue-demo.js',
-        "vue1": './src/vue/page/vue1.js',
+        "demo": './src/vue/page/demo.js',
+        "demo1": './src/vue/page/demo1.js',
         // "main": './src/react/page/main.js',
         // "react1": './src/react/page/react1.js'
     },

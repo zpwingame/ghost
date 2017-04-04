@@ -10,12 +10,15 @@
 <body>
     <div id="app" v-cloak>
 
-        
-
-
-
+    <!-- 列表 -->
+    <template>
+        <div v-for='item in flowerList'>
+            {{item}}
+        </div>
+    </template>
         <p>{{name}}</p>
         <Hello></Hello>
+        <Bottom></Bottom>
     </div>
 
     <script type="text/javascript" src='../../dist/common.min.js'>

@@ -10,9 +10,9 @@ var named = require('vinyl-named');
 // });
 //
 //
-// var livereload = require('livereload');
-// var server = livereload.createServer();
-// server.watch(__dirname + "/dist");
+var livereload = require('livereload');
+var server = livereload.createServer();
+server.watch(__dirname + "/dist/vue-demo.js");
 
 gulp.task('default',function(cb){
     webpack(require('./webpack.config.js'),function(){

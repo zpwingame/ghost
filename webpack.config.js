@@ -10,14 +10,14 @@ module.exports = {
     entry: {
         "vue-demo": './src/vue/page/vue-demo.js',
         "vue1": './src/vue/page/vue1.js',
-        "main": './src/react/page/main.js',
-        "react1": './src/react/page/react1.js'
+        // "main": './src/react/page/main.js',
+        // "react1": './src/react/page/react1.js'
     },
     devtool: 'eval-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
-        publicPath: path.resolve(__dirname, 'dist')
+        publicPath:'http://127.0.0.1:8080/dist'
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
@@ -40,7 +40,10 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap'],
+                loader:ExtractTextPlugin.extract({
+                    fallbackLoader:'style-loader',
+                    loader:['css-loader?sourceMap', 'sass-loader?sourceMap']
+                }),
                 include: [resolve('src'), resolve('test')]
             },
             {
@@ -79,6 +82,7 @@ module.exports = {
         new ExtractTextPlugin({
             filename: '[name].min.css',
             allChunks: true,
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }

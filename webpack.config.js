@@ -11,6 +11,7 @@ module.exports = {
         "demo": './src/vue/page/demo.js',
         "demo1": './src/vue/page/demo1.js',
         "render-demo": './src/vue/page/render-demo.js',
+        "plugin-demo": './src/vue/page/plugin-demo.js',
         "r-demo1": './src/react/page/r-demo1.js'
         // "react1": './src/react/page/react1.js'
     },

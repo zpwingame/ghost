@@ -62,8 +62,11 @@ Vue.component('jsx-syntax', {
     render(h){
         return (
             <div>
-            <Hello></Hello>
-            <div>it uses JSX </div>
+                { this.items.length > 0 ?
+                    <Hello></Hello>
+                    :'empty'
+                }
+                <div>it uses JSX </div>
             </div>
         )
     }

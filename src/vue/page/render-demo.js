@@ -49,7 +49,7 @@ Vue.component('render-list', {
 })
 
 
-Vue.component('jsx-synax', {
+Vue.component('jsx-syntax', {
     data:function(){
         return {
             items:[{

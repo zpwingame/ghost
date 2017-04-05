@@ -17,4 +17,5 @@ let vm = new Vue({
 		Bottom:Bottom
 	}
 })
+console.log(vm.name)
 vm.$data.flowerList = db.flowerList;

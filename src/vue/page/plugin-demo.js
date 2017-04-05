@@ -1,13 +1,11 @@
 import Vue from 'vue';
 import MyPlugin from '../plugin/MyPlugin.js';
-Vue.use(MyPlugin);
 import Hello from '../components/Hello.vue'
 import Bottom from '../components/Bottom.vue'
 import './vue-demo.scss'
 import db from './db.json'
 
-console.log(db)
-
+Vue.use(MyPlugin);
 let vm = new Vue({
 	el:'#app',
 	data:{

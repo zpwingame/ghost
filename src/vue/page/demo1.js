@@ -75,9 +75,13 @@ Vue.component("component-demo", {
 
 
 Vue.directive('bgc',{
-	inserted:function(el){
-		el.style.background = 'green';
-	}
+        bind: function () {},
+        inserted: function (el) {
+            el.style.background = 'green';
+        },
+        update: function () {},
+        componentUpdated: function () {},
+        unbind: function () {}
 })
 
 let vm = new Vue({

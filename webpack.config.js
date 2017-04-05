@@ -10,7 +10,8 @@ module.exports = {
     entry: {
         "demo": './src/vue/page/demo.js',
         "demo1": './src/vue/page/demo1.js',
-        // "main": './src/react/page/main.js',
+        "render-demo": './src/vue/page/render-demo.js',
+        "r-demo1": './src/react/page/r-demo1.js'
         // "react1": './src/react/page/react1.js'
     },
     devtool: 'eval-source-map',

@@ -24,7 +24,8 @@
 			<h1 slot="header" class='header'>这里可能是一个页面标题</h1>
 			<h2 slot="center" class='center'>center</h2>
 		</my-component1>
-		<component-demo prop-b="propsB"></component-demo>
+		<component-demo prop-b="propsB" v-on:increment="incrementTotal"></component-demo>
+		<p>total is {{total}}</p>
 		<conponent v-bind:is='currentView'>
 	</div>
 	<script type="text/javascript" src='../../dist/common.min.js'>

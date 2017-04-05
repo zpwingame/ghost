@@ -41,7 +41,19 @@ Vue.component('my-component1', {
 })
 
 Vue.component("component-demo", {
-    template:'<p>component-demo</p>',
+    template:`
+    <div>
+    <p>component-demo total is {{total}}</p>
+    <div>
+    <input type="button" value='increment' @click="increment()"/>
+    </div>
+    </div>
+    `,
+    data:function(){
+        return{
+            total:0
+        }
+    },
     props: {
         propA: Number,
         propB: {
@@ -50,6 +62,12 @@ Vue.component("component-demo", {
             default: "hello"
         },
         propC: [String, Number]
+    },
+    methods:{
+        increment:function(){
+            this.$emit('increment');
+            this.total +=1;
+        }
     },
     mounted:function(){
     }
@@ -68,16 +86,21 @@ let vm = new Vue({
         name: 'Tom',
         color: 'Blue',
 		currentView:'con1',
-        rawHtml:'<span>span</span>'
+        rawHtml:'<span>span</span>',
+        total:0
     },
     methods: {
         eat: function() {
             console.log(123)
+        },
+        incrementTotal:function(){
+            this.total+=1;
+            console.log('total is' +this.total);
         }
     },
     computed: {
         computedName: function() {
-            return this.name + 'and Cherry'
+            return this.name + 'and Jerry'
         }
     },
     filters: {

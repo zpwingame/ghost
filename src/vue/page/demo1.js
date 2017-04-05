@@ -102,6 +102,11 @@ let vm = new Vue({
             console.log('total is' +this.total);
         }
     },
+    watch:{
+        name:function(newValue,oldValue){
+            console.log('new value is' + newValue+'and old value is'+oldValue)
+        }
+    },
     computed: {
         computedName: function() {
             return this.name + 'and Jerry'

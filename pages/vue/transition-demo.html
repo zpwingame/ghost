@@ -27,7 +27,12 @@
         <transition name="slide-fade">
             <p v-if="show">hello</p>
         </transition>
+        <div>
+            <input v-model.number="number" type="number" step="20">
+            <p>{{ animatedNumber }}</p>
+        </div>
     </div>
+    <script src="https://unpkg.com/tween.js@16.3.4"></script>
     <script type="text/javascript" src='../../dist/common.min.js'>
     </script>
     <script type="text/javascript" src='../../dist/transition-demo.js'>

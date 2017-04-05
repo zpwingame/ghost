@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slide-fade-enter-active {
+        transition: all .3s ease;
+        }
+        .slide-fade-leave-active {
+        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .slide-fade-enter, .slide-fade-leave-to
+        /* .slide-fade-leave-active for <2.1.8 */ {
+        transform: translateX(100px);
+        opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show = !show">
+            Toggle render
+        </button>
+        <transition name="slide-fade">
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
+    <script type="text/javascript" src='../../dist/common.min.js'>
+    </script>
+    <script type="text/javascript" src='../../dist/transition-demo.js'>
+    </script>
+</body>
+</html>

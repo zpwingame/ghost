@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import HelloWorld from '../components/HelloWorld.jsx'
-class Main extends React.Component{
+import List from '../components/List.jsx'
+class RDemo1 extends React.Component{
 	constructor(props){
 		super(props)
 	}
 	static run(){
-		ReactDom.render(<Main></Main>,document.getElementById("app"));
+		ReactDom.render(<RDemo1></RDemo1>,document.getElementById("app"));
 	}
 	render(){
+		let items = [{name:'1'},{name:'2'}]
 		return (
-		<HelloWorld name='123'/>
+		<List items={items}/>
 		)
 	}
 
 }
-Main.run();
+RDemo1.run();

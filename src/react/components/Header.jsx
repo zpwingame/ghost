@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.scss'
 
 class List extends React.Component {
 	constructor(props) {
@@ -7,12 +8,11 @@ class List extends React.Component {
 
 	render() {
 		return (
-			<div className='list-container'>
+			<div className='header-container'>
 				<div className='left-icon'>
-					123
+					aa
 				</div>
 				<div className='right-desc'>
-					456
 				</div>
 			</div>
 		)

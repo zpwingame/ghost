@@ -18,7 +18,6 @@ class RBasic extends React.Component {
 	}
 	render() {
 		return (
-			<div>
 			<div className='list-container'>
 				{
 					this.charctorList.map((item, index) => {
@@ -27,7 +26,6 @@ class RBasic extends React.Component {
 						</div>
 					})
 				}
-			</div>
 			<Header items={[1,2,3]}></Header>
 			</div>
 		)

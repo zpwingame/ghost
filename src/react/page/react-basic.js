@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import './react-basic.scss';
+import Header from '../components/Header.jsx';
 class RBasic extends React.Component {
 	constructor(props) {
 		super(props);
@@ -17,6 +18,7 @@ class RBasic extends React.Component {
 	}
 	render() {
 		return (
+			<div>
 			<div className='list-container'>
 				{
 					this.charctorList.map((item, index) => {
@@ -25,6 +27,8 @@ class RBasic extends React.Component {
 						</div>
 					})
 				}
+			</div>
+			<Header items={[1,2,3]}></Header>
 			</div>
 		)
 	}

@@ -9,13 +9,25 @@ console.log(db)
 let vm = new Vue({
 	el:'#app',
 	data:{
-		name:'Tom',
 		flowerList:''
 	},
 	components:{
 		Hello:Hello,
 		Bottom:Bottom
+	},
+	created:function(){
+		let list = [];
+		let item = db.flowerList;
+		for(let i = 0;i<1000;i++){
+			list = list.concat(item)
+		}
+		this.$data.flowerList = list;
+		console.log(performance.now());
+	},
+	mounted:function(){
+		console.log(performance.now());
 	}
 })
 console.log(vm.name)
-vm.$data.flowerList = db.flowerList;
+// vm.$data.flowerList = db.flowerList;
+console.log(vm.flowerList.length)

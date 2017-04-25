@@ -6,13 +6,13 @@ class List extends React.Component {
   }
 
   render() {
-      let { items } = this.props
+      let { items } = this.props;
       let children
       if (items.length > 0) {
       children = (
        <ul>
          {items.map((item,index)=>
-           <li key={item.id||index}>{item.name}</li>
+           <li key={index}>{item}</li>
          )}
        </ul>
       )

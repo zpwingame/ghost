@@ -45,7 +45,7 @@ Vue.component("component-demo", {
     <div>
     <p>component-demo total is {{total}}</p>
     <div>
-    <input type="button" value='increment' @click="increment()"/>
+    <input type="button" value='increment' @click="incrementss()"/>
     </div>
     </div>
     `,
@@ -64,7 +64,7 @@ Vue.component("component-demo", {
         propC: [String, Number]
     },
     methods:{
-        increment:function(){
+        incrementss:function(){
             this.$emit('increment');
             this.total +=1;
         }

@@ -10,6 +10,7 @@ module.exports = {
     entry: {
         "demo": './src/vue/page/demo.js',
         "demo1": './src/vue/page/demo1.js',
+        "lazy": './src/vue/page/lazy.js',
         // "render-demo": './src/vue/page/render-demo.js',
         "plugin-demo": './src/vue/page/plugin-demo.js',
         "transition-demo": './src/vue/page/transition-demo.js',

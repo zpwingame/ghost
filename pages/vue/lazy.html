@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: white;
+        }
+        .container{
+            display: flex;
+        }
+        .container .left{
+            flex: 0 1 auto;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .container .right{
+            flex:0 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>index</div>
+    </div>
+    <!-- <script>
+    window.onload =function() {
+        var tags = document.getElementsByTagName('div');
+        console.log(tags)
+        Array.forEach.appltags.forEach(function(item){
+            item.addEventListener('click',function(){
+                console.log(item.nodeValue)
+            },false)
+        })
+    }
+
+    </script> -->
+    <p>ss</p>
+    <p>ss</p>
+    <p>ss</p>
+    <p>ss</p>
+    <p>ss</p>
+    <div class="container">
+        <div class='left'>我我我我我哦我我我我我我哦我我我我我我哦我</div>
+        <div class='right'>你你您</div>
+    </div>
+    <!-- <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+        d3.select("body")
+            .selectAll("p")
+            .data([4, 8, 15, 16, 23, 42])
+            .enter().append("p")
+            .text(function(d) {
+                return "I’m number " + d + "!";
+            });
+        // d3.select("body").selectAll("p").data([1, 2, 3]).style("color", function(d, i) {
+        //     return i % 2 ? "green" : "#eee";
+        // });
+        // d3.selectAll("p").style("color", "white");
+    </script> -->
+    <div id='app'>
+    <div ref="container">
+        <div v-for='item in urlList'>
+            <img v-lazy="item"/>
+        </div>
+   </div>
+   </div>
+   <!--<script src="https://unpkg.com/vue"></script>-->
+    <script type="text/javascript" src='../../dist/common.min.js'>
+    </script>
+    <script type="text/javascript" src='../../dist/lazy.js'>
+    </script>
+
+   </script>
+    <!-- <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script> -->
+    <script>
+
+    </script>
+</body>
+
+</html>

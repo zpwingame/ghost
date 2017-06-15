@@ -15,6 +15,7 @@ module.exports = {
         "plugin-demo": './src/vue/page/plugin-demo.js',
         "transition-demo": './src/vue/page/transition-demo.js',
         "router-demo": './src/vue/page/router-demo.js',
+        "css-secret": './src/vue/page/css-secret.js',
         "r-demo1": './src/react/page/r-demo1.js',
         "react-basic": './src/react/page/react-basic.js',
         "react1": './src/react/page/react1.js'

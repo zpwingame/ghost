@@ -9,13 +9,34 @@
 </head>
 <body>
     <div id="app" v-cloak>
-
-    <!-- 列表 -->
-    <template>
-        <li v-for='item in flowerList'>
-            {{item}}
-        </li>
-    </template>
+        <tn-slider direction='column' :count='6' :index="currentFrameIndex">
+            <img src="http://img0.pclady.com.cn/pclady/pet/choice/cat/1701/6.jpg" class="thumbnail-nav thumbnail-nav-prev" slot='tn-prev'>
+            <tn-item>
+                <img class="frame-image" src="http://img0.pclady.com.cn/pclady/pet/choice/cat/1701/6.jpg" :class="{active: currentFrameIndex === index}">
+                <p>销售状态</p>
+            </tn-item>
+            <tn-item>
+                <img class="frame-image" src="http://img0.pclady.com.cn/pclady/pet/choice/cat/1701/6.jpg" :class="{active: currentFrameIndex === index}">
+                <p>销售状态</p>
+            </tn-item>
+            <tn-item>
+                <img class="frame-image" src="http://img0.pclady.com.cn/pclady/pet/choice/cat/1701/6.jpg" :class="{active: currentFrameIndex === index}">
+                <p>销售状态</p>
+            </tn-item>
+            <tn-item>
+                <img class="frame-image" src="http://img0.pclady.com.cn/pclady/pet/choice/cat/1701/6.jpg" :class="{active: currentFrameIndex === index}">
+                <p>销售状态</p>
+            </tn-item>
+            <tn-item>
+                <img class="frame-image" src="http://img0.pclady.com.cn/pclady/pet/choice/cat/1701/6.jpg" :class="{active: currentFrameIndex === index}">
+                <p>销售状态</p>
+            </tn-item>
+            <tn-item>
+                <img class="frame-image" src="http://img0.pclady.com.cn/pclady/pet/choice/cat/1701/6.jpg" :class="{active: currentFrameIndex === index}">
+                <p>销售状态</p>
+            </tn-item>
+            <img src="http://img0.pclady.com.cn/pclady/pet/choice/cat/1701/6.jpg" class="thumbnail-nav thumbnail-nav-next" slot='tn-next'>
+        </tn-slider>
     </div>
 
     <script type="text/javascript" src='../../dist/common.min.js'>

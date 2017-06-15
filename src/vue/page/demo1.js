@@ -3,7 +3,8 @@ import Vue from 'vue'
 let bus = new Vue();
 
 Vue.component('my-component', {
-    template: "<h1 @click='eat()'>click me</h1>",
+    template: `<h1
+     @click='eat()'>click me</h1>`,
     props: ['name', 'age'],
     methods: {
         eat: function() {
@@ -88,6 +89,10 @@ let vm = new Vue({
     el: '#app',
     data: {
         name: 'Tom',
+        tt:{
+            name:'123',
+            data:[1,2,3]
+        },
         color: 'Blue',
 		currentView:'con1',
         rawHtml:'<span>span</span>',
@@ -104,6 +109,9 @@ let vm = new Vue({
     },
     watch:{
         name:function(newValue,oldValue){
+            console.log('new value is' + newValue+'and old value is'+oldValue)
+        },
+        'tt.name':function(newValue,oldValue){
             console.log('new value is' + newValue+'and old value is'+oldValue)
         }
     },

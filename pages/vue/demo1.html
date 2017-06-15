@@ -13,10 +13,10 @@
 	</style>
 </head>
 <body>
-	<div id="app" v-bgc>
+	<div id="app">
 		<div v-html="rawHtml"></div>
 		<input type="button" name="" value='clickme' @click="eat()">
-		<input type="text" v-model='name'>
+		<input type="text" v-model='tt.name'>
 		<div>{{color|toLowerCase}}</div>
 		<div>{{computedName}}</div>
 		<my-component name='jack' age='10'></my-component>

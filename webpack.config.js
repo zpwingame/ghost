@@ -18,7 +18,8 @@ module.exports = {
         "css-secret": './src/vue/page/css-secret.js',
         "r-demo1": './src/react/page/r-demo1.js',
         "react-basic": './src/react/page/react-basic.js',
-        "react1": './src/react/page/react1.js'
+        "react1": './src/react/page/react1.js',
+        "mock":'./a.js'
     },
     devtool: 'eval-source-map',
     output: {

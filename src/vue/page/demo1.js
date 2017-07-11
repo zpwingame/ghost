@@ -85,7 +85,7 @@ Vue.directive('bgc',{
         unbind: function () {}
 })
 
-let vm = new Vue({
+window.vm = new Vue({
     el: '#app',
     data: {
         name: 'Tom',

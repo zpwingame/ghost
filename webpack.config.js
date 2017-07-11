@@ -19,9 +19,9 @@ module.exports = {
         "r-demo1": './src/react/page/r-demo1.js',
         "react-basic": './src/react/page/react-basic.js',
         "react1": './src/react/page/react1.js',
-        "mock":'./a.js'
+        "mock-a":'./a.js'
     },
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',

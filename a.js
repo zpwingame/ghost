@@ -1,13 +1,16 @@
-var Mock = require('mockjs')
 var $ = require('jquery')
-Mock.mock(/\.json/, {
-    'list|1-10': [{
-        'id|+1': 1,
-        'email': '@EMAIL'
-    }]
-})
+console.log(123);
+import './mock.js'
 $.ajax({
-    url: 'hello.json',
+    url: '/getData',
+    dataType: 'json'
+}).done(function(data, status, jqXHR){
+    $('<pre>').text(JSON.stringify(data, null, 4))
+        .appendTo('body')
+})
+
+$.ajax({
+    url: '/test',
     dataType: 'json'
 }).done(function(data, status, jqXHR){
     $('<pre>').text(JSON.stringify(data, null, 4))

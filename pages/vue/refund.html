@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../dist/refund.min.css">
+
+</head>
+<body>
+    <div id="app">
+        <div class="refund-panel">
+            <div class="header">
+                <div class="title">退款</div>
+                <div class="close"></div>
+            </div>
+            <div class="content">
+                <div class="main-info-container">
+                    <div class="top-line">
+                        <span>订单编号：{{refundableOrderHeadInfo.orderViewId}}</span>
+                        <span>下单时间：{{refundableOrderHeadInfo.orderTime}}</span>
+                    </div>
+
+                    <div class='detail-info'>
+                        <div class="left-panel">
+                            <div class="top">
+                                <div class='table-number'>桌号：{{refundableOrderHeadInfo.tableNo}}</div>
+                                <div class='person-number'>{{refundableOrderHeadInfo.personCount}}人就餐</div>
+                            </div>
+                            <div class="bottom">
+                                <div class='phone-text'>手机号码：</div>
+                                <div class='phone-number'>{{refundableOrderHeadInfo.phone || '顾客未绑定'}}</div>
+                            </div>
+                        </div>
+                        <div class="vertical-line">
+                        </div>
+                        <div class="right-panel">
+                            <div class='item'>
+                                <div>消费金额：</div>
+                                <div>{{refundableOrderHeadInfo.consumptionPrice}}</div>
+                            </div>
+                            <div class='item'>
+                                <div>支付优惠：</div>
+                                <div>{{refundableOrderHeadInfo.totalPromotionDiscount}}</div>
+                            </div>
+                            <div class='item'>
+                                <div>优惠券抵扣：</div>
+                                <div>{{refundableOrderHeadInfo.totalCouponDiscount}}</div>
+                            </div>
+                            <div class='item'>
+                                <div>抹零：</div>
+                                <div>{{refundableOrderHeadInfo.eraseZeroAmount}}</div>
+                            </div>
+                            <div class="pay-money">
+                                <div>实付金额：</div>
+                                <div class='show-value'>{{refundableOrderHeadInfo.merchantAmount}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-container">
+                    <div class="tab activce-tab-title">点餐详情</div>
+                </div>
+                <div class="refund-list-container">
+                    <div class="dish-header">
+                        <div class="dish-name">菜品</div>
+                        <div class="dish-number">可退份数</div>
+                        <div class="dish-price">价格</div>
+                        <div class="dish-state">状态</div>
+                    </div>
+                    <div class="refund-list" v-for='(refundOrder,index) in showDishOrderList'>
+                        <div class="order-time"><label v-if='index === subRefundableOrderList.length-1'>点餐时间</label><label v-else>加菜时间</label>{{refundOrder.subOrderTime}}</div>
+                        <div class="refund-item" v-for='dish in refundOrder.showDishList'>
+                            <div class="item-name-container">
+                                <div class='input-box' :class="{'box-selected':dish.choosed}" @click="selectDish(dish)"></div>
+                                <div class='item-name'>{{dish.name}}</div>
+                                <div class='spec-attr' v-for='spec in dish.specAttr'>
+                                    {{spec}}
+                                </div>
+                            </div>
+                            <div class="item-number-container"><span>x</span><input class='item-number' type="text" :value='dish.editCount' @blur='countBlur(dish)'></div>
+                            <div class="item-price"><span class='origin-price' v-if='dish.originPrice!=dish.currentPrice'>￥{{dish.originPrice}}</span><span>￥{{dish.currentPrice}}</span></div>
+                            <div class="item-state">{{dish.status}}</div>
+                        </div>
+                    </div>
+                    <div class='total-price'>
+                        <div class='item'>消费金额：{{refundableOrderHeadInfo.consumptionPrice}}</div>
+                        <div class='item'>优惠金额：{{refundableOrderHeadInfo.disCountAmount}}</div>
+                        <div class='item'>用户实付：{{refundableOrderHeadInfo.merchantAmount}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class='price-container'>
+                    <div >用户实付：{{refundableOrderHeadInfo.merchantAmount}}</div>
+                    <div class='right-container'>
+                        <div class='question'></div>
+                        <!-- <img class="question" src="../../src/img/question-green.png" alt=""> -->
+                        <div class='tips'>
+                            该金额根据退款菜品价格在总额中的比例计算您可自行修改
+                        </div>
+                        <span>退款金额：</span>
+                        <input type="text" class='refund-price' :value='dishPrice'>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button @click='refundAll()'>全单退款</button>
+                    <button @click='refund()'>确认退款</button>
+                </div>
+            </div>
+        </div>
+        <div class="over-layer"></div>
+    </div>
+
+    <script type="text/javascript" src='../../dist/common.min.js'>
+    </script>
+    <script type="text/javascript" src='../../dist/refund.js'>
+    </script>
+</body>
+
+</html>

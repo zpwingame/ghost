@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.refund-panel {
+    width: 680px;
+    height: 612px;
+    background: #FFF;
+    color: #666;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+
+    .header {
+        height: 40px;
+        background: #F7F7F7;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px 0 20px;
+
+        .title {
+            font-size: 14px;
+        }
+
+        .close {
+            color: #999;
+            font-size: 15px;
+            line-height: 18px;
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+
+            &::before {
+                content: '';
+                height: 1px;
+                width: 20px;
+                background-color: #bbb;
+                position: absolute;
+                transform: rotate(45deg);
+                top: 20px;
+            }
+
+            &::after {
+                content: '';
+                height: 1px;
+                width: 20px;
+                background-color: #bbb;
+                position: absolute;
+                transform: rotate(-45deg);
+                top: 20px;
+            }
+        }
+    }
+
+    .content {
+        margin: 0 20px;
+        height: 460px;
+        overflow: auto;
+
+        .main-info-container {
+            .top-line {
+                color: #999;
+                font-size: 12px;
+                height: 40px;
+                line-height: 40px;
+
+                span {
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+                    margin-left: 20px;
+                }
+            }
+
+            .detail-info {
+                display: flex;
+                padding: 10px 14px;
+                background-color: #fff;
+                font-size: 13px;
+                border: 1px solid #EFEFEF;
+
+                .left-panel {
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-content: space-between;
+                    flex: 0 0 203px;
+                    margin-right: 14px;
+
+                    .top {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        .table-number {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .bottom {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+                }
+
+                .vertical-line {
+                    flex: 0 0 1px;
+                    background: #EFEFEF;
+                }
+
+                .right-panel {
+                    margin-left: 14px;
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-content: space-between;
+
+                    .item {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 10px;
+                    }
+
+                    .pay-money {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        border-top: dashed 1px #EAEAEA;
+                        padding-top: 10px;
+
+                        .show-value {
+                            color: #666;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tab-container {
+            display: flex;
+            margin-top: 30px;
+            position: relative;
+            top: 1px;
+
+            .tab {
+                color: #666;
+                font-size: 12px;
+                width: 80px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+            }
+
+            .activce-tab-title {
+                color: #20bba9;
+                font-weight: bold;
+                border-top: 1px solid #EAEAEA;
+                border-left: 1px solid #EAEAEA;
+                border-right: 1px solid #EAEAEA;
+                border-bottom: #ffffff !important;
+                background-color: #ffffff;
+                cursor: text;
+            }
+        }
+
+        .refund-list-container {
+            padding: 10px 14px 0;
+            border: 1px solid #EAEAEA;
+            margin-bottom: 15px;
+
+            .dish-header {
+                font-size: 12px;
+                padding: 0 20px;
+                background: #f5f5f5;
+                height: 30px;
+                line-height: 30px;
+                display: flex;
+
+                .dish-name {
+                    width: 288px;
+                }
+
+                .dish-number {
+                    width: 117px;
+                    text-align: right;
+                }
+
+                .dish-price {
+                    width: 117px;
+                    text-align: right;
+                }
+
+                .dish-state {
+                    width: 118px;
+                    text-align: right;
+                }
+            }
+
+            .refund-list {
+                font-size: 12px;
+                margin: 0 20px;
+
+                .order-time {
+                    height: 32px;
+                    line-height: 32px;
+                }
+
+                .refund-item {
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    height: 34px;
+
+                    .item-name-container {
+                        width: 288px;
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
+
+                        .input-box {
+                            height: 14px;
+                            border: 1px solid #DDD;
+                            background: #F5F5F5;
+                            cursor: pointer;
+                            flex: 0 0 14px;
+                        }
+
+                        .box-selected {
+                            background: green;
+                        }
+
+                        .item-name {
+                            margin-left: 10px;
+                        }
+
+                        .spec-attr {
+                            border-right: solid 1px #EAEAEA;
+                            margin-left: 10px;
+                            padding-right: 10px;
+
+                            &:last-child {
+                                border-right: none;
+                            }
+                        }
+                    }
+
+                    .item-number-container {
+                        width: 117px;
+                        text-align: right;
+                        display: flex;
+                        justify-content: flex-end;
+
+                        .item-number {
+                            width: 60px;
+                            height: 24px;
+                            text-align: right;
+                        }
+                    }
+
+                    .item-price {
+                        width: 117px;
+                        text-align: right;
+
+                        .origin-price {
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    .item-state {
+                        width: 118px;
+                        text-align: right;
+                    }
+                }
+            }
+
+            .total-price {
+                font-size: 12px;
+                display: flex;
+                justify-content: flex-end;
+                height: 32px;
+                line-height: 32px;
+                border-top: 1px solid #EAEAEA;
+                padding-right: 20px;
+
+                .item {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        height: 112px;
+        box-sizing: border-box;
+        padding: 25px 20px 16px;
+        box-shadow: 0 -3px 4px 0 #F5F5F5;
+
+        .price-container {
+            display: flex;
+            font-size: 13px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .right-container {
+                position: relative;
+
+                .tips {
+                    display: none;
+                    font-size: 12px;
+                    position: absolute;
+                    padding: 8px 11px 12px 15px;
+                    box-sizing: border-box;
+                    color: #FFF;
+                    width: 270px;
+                    height: 50px;
+                    opacity: 0.65;
+                    background: #000000;
+                    top: -50px;
+                    left: -48px;
+                    border-radius: 2px;
+
+
+                    &::before {
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                        border-top: 4px solid rgba(0,0,0,1);
+                        display: inline-block;
+                        position: relative;
+                        top: 33px;
+                        left: 35px;
+                    }
+                }
+
+                .question {
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 6px;
+                    cursor: pointer;
+                    background: url('../../../src/img/question-green.png') no-repeat;
+                    background-size: 100% 100%;
+                    &:hover{
+                        background: url('../../../src/img/question-green-hover.png') no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    &:hover + .tips{
+                        display: block;
+
+                    }
+
+                }
+
+                input {
+                    height: 33px;
+                    width: 170px;
+                }
+            }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+.over-layer {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    zoom: 1;
+    opacity: 0.4;
+    position: fixed;
+    z-index: 99;
+}

@@ -9,6 +9,7 @@ console.log(__dirname)
 module.exports = {
     entry: {
         "demo": './src/vue/page/demo.js',
+        "refund": './src/vue/page/refund.js',
         "demo1": './src/vue/page/demo1.js',
         "lazy": './src/vue/page/lazy.js',
         // "render-demo": './src/vue/page/render-demo.js',
@@ -18,8 +19,7 @@ module.exports = {
         "css-secret": './src/vue/page/css-secret.js',
         "r-demo1": './src/react/page/r-demo1.js',
         "react-basic": './src/react/page/react-basic.js',
-        "react1": './src/react/page/react1.js',
-        "mock-a":'./a.js'
+        "react1": './src/react/page/react1.js'
     },
     devtool: 'source-map',
     output: {
@@ -64,14 +64,14 @@ module.exports = {
                 loader: ['vue-loader'],
                 include: [resolve('src'), resolve('test')]
             },
-            //   {
-            //     test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-            //     loader: 'url-loader',
-            //     query: {
-            //       limit: 10000,
-            //       name: utils.assetsPath('img/[name].[hash:7].[ext]')
-            //     }
-            //   },
+              {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                query: {
+                  limit: 10000,
+                //   name: utils.assetsPath('img/[name].[hash:7].[ext]')
+                }
+              }
             //   {
             //     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
             //     loader: 'url-loader',

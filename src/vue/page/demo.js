@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import $ from 'jquery';
 import './vue-demo.scss'
-import '/Users/zp/notes/mock/mock.js'
+// import '/Users/zp/notes/mock/mock.js'
 
 window.vm = new Vue({
 	el:'#app',
@@ -32,7 +32,7 @@ window.vm = new Vue({
 		},
 		closePanel(){
 			this.$destroy(true);
-	      	this.$el.remove();
+	    	this.$el.remove();
 			console.log(123);
 		}
 	}

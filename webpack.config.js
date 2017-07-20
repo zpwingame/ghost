@@ -10,6 +10,7 @@ module.exports = {
     entry: {
         "demo": './src/vue/page/demo.js',
         "refund": './src/vue/page/refund.js',
+        "account": './src/vue/page/account.js',
         "demo1": './src/vue/page/demo1.js',
         "lazy": './src/vue/page/lazy.js',
         // "render-demo": './src/vue/page/render-demo.js',

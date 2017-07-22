@@ -5,7 +5,6 @@ var path = require('path')
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
-console.log(__dirname)
 module.exports = {
     entry: {
         "demo": './src/vue/page/demo.js',
@@ -13,7 +12,6 @@ module.exports = {
         "account": './src/vue/page/account.js',
         "demo1": './src/vue/page/demo1.js',
         "lazy": './src/vue/page/lazy.js',
-        // "render-demo": './src/vue/page/render-demo.js',
         "plugin-demo": './src/vue/page/plugin-demo.js',
         "transition-demo": './src/vue/page/transition-demo.js',
         "router-demo": './src/vue/page/router-demo.js',
@@ -44,43 +42,48 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.js|jsx$/,
-                loader: 'babel-loader',
-                include: [resolve('src'), resolve('test')]
+                use:[{
+                        loader:'babel-loader'
+                    }
+                ],
+                // include: [resolve('src'), resolve('test')]
+                exclude:/node_modules/
             },
             {
                 test: /\.scss$/,
-                loader:ExtractTextPlugin.extract({
-                    fallbackLoader:'style-loader',
-                    loader:['css-loader?sourceMap', 'sass-loader?sourceMap']
+                use:ExtractTextPlugin.extract({
+                    fallback:'style-loader',
+                    // use:['css-loader?sourceMap', 'sass-loader?sourceMap']
+                    use:[
+                        {loader:'css-loader',options:{sourceMap:true}},
+                        {loader:'sass-loader',options:{sourceMap:true}},
+                    ]
                 }),
                 include: [resolve('src'), resolve('test')]
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader',
+                use:[
+                    {loader:'style-loader'}
+                ],
                 include: [resolve('src'), resolve('test')]
             },
             {
                 test: /\.vue$/,
-                loader: ['vue-loader'],
+                use:[
+                    {loader:'vue-loader'}
+                ],
                 include: [resolve('src'), resolve('test')]
             },
               {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'url-loader',
-                query: {
-                  limit: 10000,
-                //   name: utils.assetsPath('img/[name].[hash:7].[ext]')
-                }
+                use:[{
+                    loader:'url-loader',
+                    options:{
+                        limit:10000
+                    }
+                }]
               }
-            //   {
-            //     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-            //     loader: 'url-loader',
-            //     query: {
-            //       limit: 10000,
-            //       name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-            //     }
-            //   }
         ]
     },
     plugins: [

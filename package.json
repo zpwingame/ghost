@@ -44,7 +44,7 @@
     "vue-lazyload": "^1.0.3",
     "vue-loader": "^11.3.4",
     "vue-router": "^2.3.1",
-    "webpack": "^2.3.3",
+    "webpack": "^3.3.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "webpack-dev-server": "^2.4.2",
     "zepto": "^1.2.0"

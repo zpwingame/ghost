@@ -23,7 +23,7 @@ window.vm = new Vue({
             this.showDishOrderList.forEach(showRefundOrder=>{
                 let choosedList = [];
                 if(allFlag){
-                    choosedList = showRefufndOrder.showDishList;
+                    choosedList = showRefundOrder.showDishList;
                 }else{
                     choosedList= showRefundOrder.showDishList.filter(dish=>{
                         return dish.choosed === true;
@@ -103,7 +103,7 @@ window.vm = new Vue({
                         choosed:false
                     })
                 })
-                order.refundableDishCartDiscntVOs.forEach(cartVO=>{
+                order.refundableDishCartDiscntVOs && order.refundableDishCartDiscntVOs.forEach(cartVO=>{
                     showDishList.push({
                         type:'dishcart',
                         orderId:order.orderId,

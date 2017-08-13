@@ -108,7 +108,7 @@ module.exports = {
             filename: '[name].min.css',
             allChunks: true,
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        // new webpack.HotModuleReplacementPlugin(),
         // new webpack.ProvidePlugin({
         //     $: 'jquery',
         //     jQuery: 'jquery'

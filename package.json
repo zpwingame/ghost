@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --config webpack.config.js",
-    "build": "webpack --optimize-minimize",
+    "build": "rm -rf ./dist && webpack --optimize-minimize",
     "debug": "node --nolazy --inspect-brk=5858 webpack.config.js"
   },
   "author": "",

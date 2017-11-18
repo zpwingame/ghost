@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/vue/page/demo1.scss"],"names":[],"mappings":"AAAA,UAAU,YAAY,YAAY,mDAAqD","file":"demo1.min.css","sourcesContent":[".img-icon{width:400px;height:40px;background:url(\"../../../asset/img/a.jpg\") no-repeat;background-size:100% 100%}\n\n\n\n// WEBPACK FOOTER //\n// ./src/vue/page/demo1.scss"],"sourceRoot":""}

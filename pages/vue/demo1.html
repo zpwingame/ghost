@@ -10,11 +10,14 @@
 			padding: 0;
 			margin: 0;
 		}
+     
 	</style>
 </head>
 <body>
 	<div id="app">
-		<div v-html="rawHtml"></div>
+        <div v-html="rawHtml"></div>
+        <div class="img-icon">
+        </div>
 		<input type="button" name="" value='clickme' @click="eat()">
 		<input type="text" v-model='tt.name'>
 		<div>{{color|toLowerCase}}</div>

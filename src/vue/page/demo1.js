@@ -1,5 +1,5 @@
 import Vue from 'vue'
-
+import './demo1.scss'
 let bus = new Vue();
 
 Vue.component('my-component', {
@@ -87,6 +87,13 @@ Vue.directive('bgc',{
 
 window.vm = new Vue({
     el: '#app',
+    template:`
+        <div>
+        <div class="img-icon">
+        </div>
+        </div>
+    `
+    ,
     data: {
         name: 'Tom',
         tt:{

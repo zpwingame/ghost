@@ -1,43 +1,40 @@
 <style type="text/css">
-	.tn-item{
-		width: 100%;
-		overflow: hidden;
-		flex:none;
-	}
+.tn-item {
+	width: 100%;
+	overflow: hidden;
+	flex: none;
+}
 
-	.tn-slider-row .tn-item{
-		display: inline-block;
-		height:100%;
-	}
+.tn-slider-row .tn-item {
+	display: inline-block;
+	height: 100%;
+}
 </style>
 <template>
 	<div class="tn-item" @click='clickHandler()'>
-    	<slot></slot>
-  	</div>
+		<slot></slot>
+	</div>
 </template>
 <script type="text/javascript">
-	export default {
-		name: 'tn-item',
+export default {
+	name: 'tn-item',
 
-		props: {
+	props: {
 
-		},
+	},
+	data() {
+		return {
 
-		data() {
-			return {
-
-			}
-		},
-
-		mounted() {
-
-		},
-
-		methods:{
-			clickHandler() {
-				this.$emit('on-item-click',{vm:this});
-			}
 		}
+	},
+	mounted() {
 
+	},
+	methods: {
+		clickHandler() {
+			this.$emit('on-item-click', { vm: this });
+		}
 	}
+
+}
 </script>

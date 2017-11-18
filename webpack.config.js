@@ -88,13 +88,13 @@ module.exports = {
                     publicPath: "./"
                 })
             },
-            // {
-            //     test: /\.css$/,
-            //     use:[
-            //         {loader:'style-loader'}
-            //     ],
-            //     include: [resolve('src'), resolve('test')]
-            // },
+            {
+                test: /\.css$/,
+                use:[
+                    {loader:'style-loader'}
+                ],
+                include: [resolve('src'), resolve('test')]
+            },
             {
                 test: /\.vue$/,
                 use: [{

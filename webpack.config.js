@@ -13,6 +13,7 @@ module.exports = {
     entry: {
         "index1": ['./src/webpack-demo/index1.js'],
         "demo1": ['./src/vue/page/demo1.js'],
+        "menu": ['./src/vue/page/menu.js'],
         "treeshaking": ['./src/webpack-demo/tree-shaking.js'],
     },
     devtool: '#source-map',
@@ -133,7 +134,7 @@ module.exports = {
             title: 'test',
             filename: 'test.html',
             template: 'template/index.html',
-            chunks: ['vendor', 'demo1'],
+            chunks: ['vendor', 'menu'],
             inject: true,
             minify: {
                 removeComments: true,

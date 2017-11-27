@@ -14,6 +14,7 @@ module.exports = {
         "index1": ['./src/webpack-demo/index1.js'],
         "demo1": ['./src/vue/page/demo1.js'],
         "menu": ['./src/vue/page/menu.js'],
+        "home": ['./src/vue/page/home.js'],
         "treeshaking": ['./src/webpack-demo/tree-shaking.js'],
     },
     devtool: '#source-map',
@@ -135,6 +136,19 @@ module.exports = {
             filename: 'test.html',
             template: 'template/index.html',
             chunks: ['vendor', 'menu'],
+            inject: true,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: false
+            },
+            chunksSortMode: 'dependency'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'home',
+            filename: 'home.html',
+            template: 'template/index.html',
+            chunks: ['vendor', 'home'],
             inject: true,
             minify: {
                 removeComments: true,

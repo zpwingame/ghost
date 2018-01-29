@@ -4,5 +4,9 @@ import Home from '../components/Home.vue'
 
 let vm =new Vue({
     el:"#app",
+    // template:'<Home/>',
+    // components:{
+    //     Home
+    // }
     render:h=>h(Home)
 })

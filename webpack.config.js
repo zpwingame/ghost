@@ -11,7 +11,7 @@ function resolve(dir) {
 console.log(resolve('a'))
 module.exports = {
     entry: {
-        "index1": ['./src/webpack-demo/index1.js'],
+        "index1": ['src/webpack-demo/word.js','./src/webpack-demo/index1.js'],
         "demo1": ['./src/vue/page/demo1.js'],
         "menu": ['./src/vue/page/menu.js'],
         "home": ['./src/vue/page/home.js'],

@@ -253,7 +253,7 @@ export default {
 }
 </script>
 
-<style lang='less'>
+<style lang='sass'>
 * {
   padding: 0;
   margin: 0;
